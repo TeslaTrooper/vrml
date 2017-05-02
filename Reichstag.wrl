@@ -134,7 +134,7 @@ DEF Tower Transform {
 		children [
 		USE TowerFront
 		]
-	}
+	},
 	
 	DEF TowerLeftSide Transform {
 		rotation 0 1 0 -1.57
@@ -142,7 +142,7 @@ DEF Tower Transform {
 		children [
 		USE TowerFront
 		]
-	}
+	},
 	
 	DEF TowerBack Transform {
 		rotation 0 1 0 3.14
@@ -150,7 +150,87 @@ DEF Tower Transform {
 		children [
 		USE TowerFront
 		]
-	}
+	},
+	DEF TowerTop Transform {
+
+	rotation 1 0 0 3.14
+		children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"stone_color.png"
+				}
+			}
+
+			geometry IndexedFaceSet {
+				coord Coordinate {
+					point [ 0 -43.4 0, 22 -43.4 0, 22 -43.4 22, 0 -43.4 22
+					
+					]
+				}
+
+				coordIndex [ 0, 1, 2, 3
+				]
+				texCoord DEF TEXCOORD TextureCoordinate {
+					point [  0 0 , 1 0, 1 1, 0 1
+					
+					]
+				}
+				texCoordIndex [0, 1, 2, 3
+				
+				]
+
+				
+
+				colorPerVertex true
+			}
+		}
+	},
+	DEF TowerTopBox Transform {
+	translation 10 31 -10
+	children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"stone_color.png"
+				}
+			}
+
+			geometry 	Box {
+				size 22 2 22 
+			}
+		}
+	},
+	DEF TowerTopTopBox Transform {
+	translation 10 37 -10
+	children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"tower_lower_top.png"
+				}
+			}
+
+			geometry 	Box {
+				size 20 10.5 20 
+			}
+		}
+	},
+		DEF TowerTopBox Transform {
+	translation 10 42 -10
+	children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"tower_upper_top.png"
+				}
+			}
+
+			geometry 	Box {
+				size 22 2 22 
+			}
+		}
+	},
 	
 	]
 }
