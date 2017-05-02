@@ -1,126 +1,326 @@
 #VRML V2.0 utf8
 
-DEF Wall1 Transform {
-	translation -47.5 0 -32
+
+DEF WallFront Transform {
+	translation 17 -15 2
 
 	children Shape {
-		appearance Appearance {}
+		appearance Appearance {
+			texture
+			ImageTexture {
+				url	"front_right.png"
+			}
+		}
 
 		geometry IndexedFaceSet {
 			coord Coordinate {
-				point [ 0 0 0, 95 0 0, 95 40 0, 0 40 0
-						0 0 -15, 0 40 -15, 95 40 -15, 95 0 -15
+				point [ 0 0 0, 40 0 0, 40 30 0, 0 30 0
+				
 				]
 			}
 
-			coordIndex [ 0, 1, 2, 3, -1,
-						 3, 5, 4, 0, 3, -1,
-						 2, 6, 5, 3, 2, -1,
-						 1, 7, 6, 2, 1, -1,
-						 0, 4, 7, 1, 0, -1,
-						 4, 5, 6, 7
+			coordIndex [ 0, 1, 2, 3
 			]
 
-			color Color {
-				color [ 1 1 0, 1 1 0, 1 1 0, 1 1 0, 1 0 0, 1 0 0, 1 0 1, 1 0 0, 1 0 0 ]
+			
+			texCoord DEF TEXCOORD TextureCoordinate {
+				point [  0 0, 1 0, 1 1, 0 1
+				
+				]
 			}
+			texCoordIndex [0, 1, 2, 3
+			
+			]
 
 			colorPerVertex true
 		}
 	}
 }
 
-DEF Wall2 Transform {
-	translation -62.5 0 32
+DEF EntryBoxMiddle Transform {
+	translation 0 0 0
 
 	children Shape {
-		appearance Appearance {}
+		appearance Appearance {
+			texture
+			ImageTexture {
+				url	"entrance.png"
+			}
+		}
+
+		geometry 	
+		Box {
+			size 35 30 18 
+		}
+	}
+}
+
+
+DEF WallFront Transform {
+	translation -57 -15 2
+
+	children Shape {
+		appearance Appearance {
+			texture
+			ImageTexture {
+				url	"front_left.png"
+			}
+		}
 
 		geometry IndexedFaceSet {
 			coord Coordinate {
-				point [ 0 0 0, 15 0 0, 15 40 0, 0 40 0
-						0 0 -64, 0 40 -64, 15 40 -64, 15 0 -64
+				point [ 0 0 0, 40 0 0, 40 30 0, 0 30 0
+				
 				]
 			}
 
-			coordIndex [ 0, 1, 2, 3, -1,
-						 3, 5, 4, 0, 3, -1,
-						 2, 6, 5, 3, 2, -1,
-						 1, 7, 6, 2, 1, -1,
-						 0, 4, 7, 1, 0, -1,
-						 4, 5, 6, 7
+			coordIndex [ 0, 1, 2, 3
 			]
 
-			color Color {
-				color [ 1 1 0, 1 1 0, 1 1 0, 1 1 0, 1 0 0, 1 0 0, 1 0 1, 1 0 0, 1 0 0 ]
+			
+			texCoord DEF TEXCOORD TextureCoordinate {
+				point [  0 0, 1 0, 1 1, 0 1
+				
+				]
 			}
+			texCoordIndex [0, 1, 2, 3
+			
+			]
 
 			colorPerVertex true
 		}
 	}
 }
 
-DEF Tower1 Transform {
-	translation -66 0 -27
+DEF Tower Transform {
+	translation 57 -15 5
+	children [
+	DEF TowerFront Transform {
+		children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"tower_front.png"
+				}
+			}
 
-	children Shape {
-		appearance Appearance {}
+			geometry IndexedFaceSet {
+				coord Coordinate {
+					point [ 0 0 0, 20 0 0, 20 30.0 0, 0 30 0
+					
+					]
+				}
 
-		geometry IndexedFaceSet {
-			coord Coordinate {
-				point [ 0 0 0, 25 0 0, 25 47.5 0, 0 47.5 0
-						0 0 -23.85, 0 47.5 -23.85, 25 47.5 -23.85, 25 0 -23.85
+				coordIndex [ 0, 1, 2, 3
 				]
+				texCoord DEF TEXCOORD TextureCoordinate {
+					point [  0 0 , 1 0, 1 1, 0 1
+					
+					]
+				}
+				texCoordIndex [0, 1, 2, 3
+				
+				]
+
+				
+
+				colorPerVertex true
+			}
+		}
+	},
+	DEF TowerRightSide Transform {
+		rotation 0 1 0 1.57
+		translation 20 0 0
+		children [
+		USE TowerFront
+		]
+	}
+	
+	DEF TowerLeftSide Transform {
+		rotation 0 1 0 -1.57
+		translation 0 0 -20
+		children [
+		USE TowerFront
+		]
+	}
+	
+	DEF TowerBack Transform {
+		rotation 0 1 0 3.14
+		translation 20 0 -20
+		children [
+		USE TowerFront
+		]
+	}
+	
+	]
+}
+
+DEF TowerLeftFront Transform {
+	
+	translation -134 0 0
+	children [
+	USE Tower
+	]
+}
+
+
+DEF Side Transform {
+	translation 75 -15 -60
+	rotation 0 1 0 1.57
+	children [
+	DEF WallSide Transform {
+		
+		translation 10 0 0
+		children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"windows_side_1.png"
+				}
 			}
 
-			coordIndex [ 0, 1, 2, 3, -1,
-						 3, 5, 4, 0, 3, -1,
-						 2, 6, 5, 3, 2, -1,
-						 1, 7, 6, 2, 1, -1,
-						 0, 4, 7, 1, 0, -1,
-						 4, 5, 6, 7
-			]
+			geometry IndexedFaceSet {
+				coord Coordinate {
+					point [ 0 0 0, 35 0 0, 35 30 0, 0 30 0
+					
+					]
+				}
 
-			color Color {
-				color [ 1 1 0, 1 1 0, 1 1 0, 1 1 0, 1 0 0, 1 0 0, 1 0 1, 1 0 0, 1 0 0 ]
+				coordIndex [ 0, 1, 2, 3
+				]
+
+				
+				texCoord DEF TEXCOORD TextureCoordinate {
+					point [  0 0, 1 0, 1 1, 0 1
+					
+					]
+				}
+				texCoordIndex [0, 1, 2, 3
+				
+				]
+
+				colorPerVertex true
+			}
+		}
+	},
+	DEF SideEntrance Transform {
+		translation 0 15 0
+		children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"entrance_side_1.png"
+				}
 			}
 
-			colorPerVertex true
+			geometry 	Box {
+				size 20 30 4 
+			}
 		}
 	}
-}
-
-
-
-Transform {
-	translation 0 0 79
+	DEF WallSide2 Transform {
+		translation -55 0 0
+		children [
+		USE WallSide
+		]
+	}
 	
-	children USE Wall1
+	
+	]
 }
 
-Transform {
-	translation 110 0 0
-	
-	children USE Wall2
+DEF SideLeft Transform {
+	translation 0 0 -120
+	rotation 0 1 0 -3.14
+	children [
+	USE Side
+	]
 }
 
-Transform {
-	translation 107.85 0 0
+
+DEF Backside Transform {
+	translation 0 -15 -120
+	rotation 0 1 0 3.14
+	children [
+	DEF BacksideEntrance Transform {
+		translation 0 15 0
+		children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"entrance_backside.png"
+				}
+			}
+
+			geometry 	Box {
+				size 35 30 18 
+			}
+		}
+	},
 	
-	children USE Tower1
+	DEF WallBack Transform {
+		translation 17 0 2
+
+		children Shape {
+			appearance Appearance {
+				texture
+				ImageTexture {
+					url	"windows_backside.png"
+				}
+			}
+
+			geometry IndexedFaceSet {
+				coord Coordinate {
+					point [ 0 0 0, 40 0 0, 40 30 0, 0 30 0
+					
+					]
+				}
+
+				coordIndex [ 0, 1, 2, 3
+				]
+
+				
+				texCoord DEF TEXCOORD TextureCoordinate {
+					point [  0 0, 1 0, 1 1, 0 1
+					
+					]
+				}
+				texCoordIndex [0, 1, 2, 3
+				
+				]
+
+				colorPerVertex true
+			}
+		}
+	},
+	
+
+	DEF WallBackLeft Transform {
+		translation -74 0 2
+		children [
+		USE WallBack
+		]
+	},
+	
+	DEF TowerLeftBack Transform {
+		
+		translation -134 15 0
+		children [
+		USE Tower
+		]
+	},
+
+	DEF TowerLeftFront Transform {
+		
+		translation 0 15 0
+		children [
+		USE Tower
+		]
+	}
+	]
 }
 
-Transform {
-	translation 107.85 0 79
-	
-	children USE Tower1
-}
 
-Transform {
-	translation 0 0 79
-	
-	children USE Tower1
-}
 
 
 
