@@ -489,4 +489,17 @@ DEF SideLeftInner1 Transform {
 	]
 }
 
+DEF MainBuilding Transform {
+	translation 0 0 -60
+	children Shape {
+		appearance Appearance {
+			material Material {
+					diffuseColor 0.5 0.5 0.5
+			}
+		}
 
+		geometry 	Box {
+			size 50 30 102
+		}
+	}
+}
