@@ -662,3 +662,102 @@ DEF FrontTopBack Transform {
 		}
 
 }
+
+DEF MainFoundation Transform {
+	translation -76 -15 3
+
+		children Shape {
+			appearance Appearance {
+				material Material {
+						diffuseColor 0.5 0.5 0.5
+					}
+			}
+
+			geometry IndexedFaceSet {
+				coord Coordinate {
+					point [ 00 0 0, 
+							152 0 0, 
+							152 -6 0, 
+							0 -6 0, 
+							0 0 -126, 
+							152 0 -126, 
+							152 -6 -126, 
+							0 -6 -126
+										]
+				}
+
+				coordIndex [ 0, 3, 2, 1, -1, 
+							0, 4, 7, 3, -1,
+							4, 5, 6, 7, -1,
+							1, 2, 6, 5 , -1,
+							0, 1, 5, 4 , -1,
+							2, 3, 7, 6
+							
+							
+				]
+				colorPerVertex true
+			}
+		}
+	
+	}
+	
+DEF TowerFoundation Transform {
+	translation -78 -15 6
+	children [
+	DEF TowerFoundationFrontLeft Transform {
+		children Shape {
+			appearance Appearance {
+				material Material {
+						diffuseColor 0.5 0.5 0.5
+					}
+			}
+
+			geometry IndexedFaceSet {
+				coord Coordinate {
+					point [ 0 0 0, 
+							22 0 0, 
+							22 -6 0, 
+							0 -6 0, 
+							0 0 -22, 
+							22 0 -22, 
+							22 -6 -22, 
+							0 -6 -22
+										]
+				}
+
+				coordIndex [ 0, 3, 2, 1, -1, 
+							0, 4, 7, 3, -1,
+							4, 5, 6, 7, -1,
+							1, 2, 6, 5 , -1,
+							0, 1, 5, 4 , -1,
+							2, 3, 7, 6
+							
+							
+				]
+				colorPerVertex true
+			}
+		}
+	
+	},
+	DEF TowerFoundationFrontRight Transform {
+		translation 134 0 0
+		children [
+		USE TowerFoundationFrontLeft
+		]
+	},
+	
+	DEF TowerFoundationBackLeft Transform {
+		translation 0 0 -110
+		children [
+		USE TowerFoundationFrontLeft
+		]
+	},
+	
+	DEF TowerFoundationBackRight Transform {
+		translation 0 0 -110
+		children [
+		USE TowerFoundationFrontRight
+		]
+	},
+	]
+}
