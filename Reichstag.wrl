@@ -759,5 +759,66 @@ DEF TowerFoundation Transform {
 		USE TowerFoundationFrontRight
 		]
 	},
+	
+	DEF SideEntranceRight Transform {
+		translation 0 0 -55
+		children [
+		USE TowerFoundationFrontRight
+		]
+	},
+	
+	DEF SideEntranceLeft Transform {
+		translation 0 0 -55
+		children [
+		USE TowerFoundationFrontLeft
+		]
+	},
+	]
+}
+
+DEF EntranceFoundation Transform {
+	translation -19 -15 10
+	children [
+	DEF EntranceFoundationFront Transform {
+		children Shape {
+			appearance Appearance {
+				material Material {
+						diffuseColor 0.5 0.5 0.5
+					}
+			}
+
+			geometry IndexedFaceSet {
+				coord Coordinate {
+					point [ 0 0 0, 
+							38 0 0, 
+							38 -6 0, 
+							0 -6 0, 
+							0 0 -22, 
+							38 0 -22, 
+							38 -6 -22, 
+							0 -6 -22
+										]
+				}
+
+				coordIndex [ 0, 3, 2, 1, -1, 
+							0, 4, 7, 3, -1,
+							4, 5, 6, 7, -1,
+							1, 2, 6, 5 , -1,
+							0, 1, 5, 4 , -1,
+							2, 3, 7, 6
+							
+							
+				]
+				colorPerVertex true
+			}
+		}
+	
+	},
+	DEF EntranceFoundationBack Transform {
+		translation 0 0 -118
+		children [
+		USE EntranceFoundationFront
+		]
+	},
 	]
 }
