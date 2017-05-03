@@ -503,3 +503,22 @@ DEF MainBuilding Transform {
 		}
 	}
 }
+
+DEF Dome Transform {
+translation 0 15 -60
+children Shape {
+
+		appearance Appearance {
+		texture ImageTexture {
+								url "dome.png"
+							}
+							textureTransform TextureTransform {
+								scale 5 5
+							}
+		}
+
+		geometry Sphere {
+			radius 25
+		}
+	}
+}
