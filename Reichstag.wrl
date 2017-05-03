@@ -447,7 +447,7 @@ DEF WallFront_rightInner Transform {
 	children Shape {
 		appearance Appearance {
 			material Material {
-				diffuseColor 0.5 0.5 0.5
+				diffuseColor 0.79 0.7 0.56
 			}
 		}
 
@@ -471,7 +471,7 @@ DEF WallBack_rightInner Transform {
 	children Shape {
 		appearance Appearance {
 			material Material {
-				diffuseColor 0.5 0.5 0.5
+				diffuseColor 0.79 0.7 0.56
 			}
 		}
 
@@ -500,7 +500,7 @@ DEF SideRightInner1 Transform {
 		children Shape {
 			appearance Appearance {
 				material Material {
-					diffuseColor 0.5 0.5 0.5
+					diffuseColor 0.79 0.7 0.56
 				}
 			}
 
@@ -534,7 +534,7 @@ DEF MainBuilding Transform {
 	children Shape {
 		appearance Appearance {
 			material Material {
-				diffuseColor 0.5 0.5 0.5
+				diffuseColor 0.79 0.7 0.56
 			}
 		}
 
@@ -669,7 +669,7 @@ DEF MainFoundation Transform {
 		children Shape {
 			appearance Appearance {
 				material Material {
-						diffuseColor 0.5 0.5 0.5
+						diffuseColor 0.79 0.7 0.56
 					}
 			}
 
@@ -708,7 +708,7 @@ DEF TowerFoundation Transform {
 		children Shape {
 			appearance Appearance {
 				material Material {
-						diffuseColor 0.5 0.5 0.5
+						diffuseColor 0.79 0.7 0.56
 					}
 			}
 
@@ -783,7 +783,7 @@ DEF EntranceFoundation Transform {
 		children Shape {
 			appearance Appearance {
 				material Material {
-						diffuseColor 0.5 0.5 0.5
+						diffuseColor 0.79 0.7 0.56
 					}
 			}
 
